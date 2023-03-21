@@ -1,0 +1,21 @@
+{
+    "name": "osamz/quran-safahat",
+    "description": "Holy Quran calculator that  help to calculate pages between two points.",
+    "type": "library",
+    "license": "GNU GPLv3",
+    "autoload": {
+        "psr-4": {
+            "QuranSafahat\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "osamz",
+            "email": "hgwrvhgtqd@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require-dev": {
+        "phpunit/phpunit": "10.0.*"
+    }
+}
