@@ -3,7 +3,6 @@ chdir(__DIR__);
 ini_set("memory_limit", "1024M");
 
 require_once '../vendor/autoload.php';
-require_once 'AyaForTest.php';
 
 use PHPUnit\Framework\TestCase;
 use QuranSafahat\Editions\QuranNaskhEdition;
@@ -13,16 +12,14 @@ use QuranSafahat\Interfaces\QuranDataRetriever;
 
 class QuranJsonDataTest extends TestCase
 {
-  use AyaForTest;
-
   private QuranDataRetriever $retriever;
 
   private Aya $firstAya;
   private Aya $lastAya;
 
-  public function __construct(?string $name = null, array $data = [], $dataName = '')
+  public function __construct(string $name)
   {
-    parent::__construct($name, $data, $dataName);
+    parent::__construct($name);
     $this->firstAya = self::firstAya();
     $this->lastAya = self::lastAya();
 
@@ -175,4 +172,49 @@ class QuranJsonDataTest extends TestCase
     $actAya = $this->retriever->getLastAyaOfPrevPage($page);
     $this->assertEquals($this->lastAya, $actAya);
   }
+
+  static function firstAya(): RichAya
+  {
+    return new RichAya(
+      1,
+      1,
+      1,
+      1,
+      'الفَاتِحة',
+      'Al-Fātiḥah',
+      2,
+      2,
+      1,
+      'بسم الله الرحمن الرحيم'
+    );
+  }
+
+  static function lastAya(): RichAya
+  {
+    return new RichAya(
+      7,
+      1,
+      1,
+      1,
+      'الفَاتِحة',
+      'Al-Fātiḥah',
+      6,
+      8,
+      7,
+      'صراط الذين أنعمت عليهم غير المغضوب عليهم ولا الضالين',
+    );
+  }
+
+  static function firstAyaLite(): Aya
+  {
+    return new Aya(
+      1,
+      1,
+      1,
+      2,
+      2,
+      1,
+    );
+  }
+
 }

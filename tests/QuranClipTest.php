@@ -2,16 +2,14 @@
 chdir(__DIR__);
 
 require_once "../vendor/autoload.php";
-require_once 'AyaForTest.php';
 
 use PHPUnit\Framework\TestCase;
+use QuranSafahat\Entities\Aya;
+use QuranSafahat\Entities\RichAya;
 
 class QuranClipTest extends TestCase
 {
-
-  use AyaForTest;
-
-  private \QuranSafahat\Entities\Aya $firstAya, $lastAya;
+  private Aya $firstAya, $lastAya;
 
   public function __construct(string $name)
   {
@@ -19,6 +17,38 @@ class QuranClipTest extends TestCase
 
     $this->firstAya = self::firstAya();
     $this->lastAya = self::lastAya();
+  }
+
+  static function firstAya(): RichAya
+  {
+    return new RichAya(
+      1,
+      1,
+      1,
+      1,
+      'الفَاتِحة',
+      'Al-Fātiḥah',
+      2,
+      2,
+      1,
+      'بسم الله الرحمن الرحيم'
+    );
+  }
+
+  static function lastAya(): RichAya
+  {
+    return new RichAya(
+      7,
+      1,
+      1,
+      1,
+      'الفَاتِحة',
+      'Al-Fātiḥah',
+      6,
+      8,
+      7,
+      'صراط الذين أنعمت عليهم غير المغضوب عليهم ولا الضالين',
+    );
   }
 
   public function testInvalidEnd()

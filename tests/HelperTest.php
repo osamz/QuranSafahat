@@ -1,17 +1,15 @@
 <?php
 chdir(__DIR__);
 require_once "../vendor/autoload.php";
-require_once 'AyaForTest.php';
 
 use PHPUnit\Framework\TestCase;
+use QuranSafahat\Entities\RichAya;
 use QuranSafahat\Helper;
 use QuranSafahat\JsonDecoder;
 use QuranSafahat\QuranJsonData;
 
 class HelperTest extends TestCase
 {
-  use AyaForTest;
-
   private Helper $helper;
 
   public function __construct(string $name)
@@ -67,4 +65,20 @@ class HelperTest extends TestCase
   }
 
   // TODO: write test for getting last aya of sura by surData.json
+
+  static function firstAya(): RichAya
+  {
+    return new RichAya(
+      1,
+      1,
+      1,
+      1,
+      'الفَاتِحة',
+      'Al-Fātiḥah',
+      2,
+      2,
+      1,
+      'بسم الله الرحمن الرحيم'
+    );
+  }
 }
