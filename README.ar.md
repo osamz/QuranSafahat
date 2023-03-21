@@ -2,19 +2,17 @@
 ![Tests Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)
 ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/osamz/quran-safahat)
 
-[للنسخة العربية انقر هنا](README.ar.md)
+# صفحاتُ القرآن الكريم
 
-# Quran Safahat
+هذه المكتبة تحسِب طولَ المقطعِ القرآني بالصفحات والأسطر.
 
-This library calculates length of Quran Clip (Makta') (مقطع) the pages from point (ayah, surah) to another.
-
-## Installation
+## التثبيت
 
 ```
 composer require osamz/quran-safahat
 ```
 
-## Usage
+## الاستعمال
 
 ```PHP
 $startAya = $helper->getCheckedAyaPoint("النازعات", 17);
@@ -27,17 +25,17 @@ $quran =  new QuranNaskhEdition($quranData);
 $quranCalculator = new QuranCalculator($quran);
 
 $clipSize = $quranCalculator->calculate($clip);
-echo "Pages: $clipSize->pages, and $clipSize->lines lines.";
-// Pages: 4, and 1 lines.
+echo "الصفحات: $clipSize->pages ، الأسطر: $clipSize->lines.";
+// الصفحات: 4 ، الأسطر: 1
 ```
 
-see: examples folder for detailed example.
+انظر مجلد الأمثلة: لتجد مثالًا مفصلًا
 
-## License
+## الرخصة
 
 [GPL-3.0-only](https://spdx.org/licenses/GPL-3.0-only.html)
 
-## Authors
+## المُنشئ
 
-- [@osamz](https://www.github.com/osamz)
+- [أسامة](https://www.github.com/osamz)
 
