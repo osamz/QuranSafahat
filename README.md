@@ -1,6 +1,6 @@
 [![License](https://img.shields.io/badge/license-GPL--3.0--only-blue)](https://spdx.org/licenses/GPL-3.0-only.html)
 ![Tests Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)
-![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/osamz/quran-safahat)
+![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/osamz/QuranSafahat)
 
 [للنسخة العربية انقر هنا](README.ar.md)
 
